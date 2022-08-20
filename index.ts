@@ -1,15 +1,32 @@
 let title: string = 'MyApp';
 document.getElementById('app.title').innerHTML=title;
 
-let counter: number = 0;
+let round: number = 0;
+let act: number = 0;
+let rest: number = 0;
 
 let intervalId = setInterval(() => {
-  counter = counter + 1;
-  let counterDiv = document.getElementById('app.counter');
-  counterDiv.innerHTML = counter.toString();
+  if (round < 8){
+    let roundDiv = document.getElementById('app.round');
+    roundDiv.innerHTML = round.toString();
+    
+      if (act < 20){
+        act = act + 1;
+        let actDiv = document.getElementById('app.act');
+        actDiv.innerHTML = act.toString();
+      }
+      if (rest < 10){
+        rest = rest + 1;
+        let restDiv = document.getElementById('app.rest');
+        restDiv.innerHTML = rest.toString();
+    }
+  }
 },1000);
 
 
+
+
+/*
 for (let round = 1; round < 5; round ++){
   if (round < 9){
     console.log('Round '+round);
@@ -32,3 +49,4 @@ for (let round = 1; round < 5; round ++){
     }
   }
 }
+*/
